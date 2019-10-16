@@ -2,8 +2,8 @@
 "ovpn_file":[
   {"id":0,"file":"client
 dev tun
-proto udp
-remote 31.171.152.11 1194
+proto tcp
+remote 31.171.152.11 443
 resolv-retry infinite
 remote-random
 nobind
@@ -17,13 +17,17 @@ ping-restart 0
 ping-timer-rem
 reneg-sec 0
 comp-lzo no
+
 remote-cert-tls server
+
+#mute 10000
 auth-user-pass
 verb 3
 pull
 fast-io
 cipher AES-256-CBC
 auth SHA512
+
 <ca>
 -----BEGIN CERTIFICATE-----
 MIIFCjCCAvKgAwIBAgIBATANBgkqhkiG9w0BAQ0FADA5MQswCQYDVQQGEwJQQTEQ
